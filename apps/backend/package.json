@@ -1,0 +1,45 @@
+{
+  "name": "@financial-app/backend",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "node --import tsx --env-file-if-exists=.env --watch src/server.ts",
+    "build": "prisma generate && tsup && cp src/generated/prisma/*.node dist/",
+    "start": "node --env-file-if-exists=.env dist/server.js",
+    "check-types": "tsc --noEmit",
+    "test": "node --import tsx --test \"test/unit/**/*.test.ts\"",
+    "test:e2e": "DATABASE_URL='postgresql://postgres:postgres@localhost:5432/financial_app?schema=e2e' prisma db push --skip-generate && DATABASE_URL='postgresql://postgres:postgres@localhost:5432/financial_app?schema=e2e' node --import tsx --test \"test/e2e/**/*.test.ts\"",
+    "docker:infra:up": "docker compose up -d",
+    "docker:infra:down": "docker compose down",
+    "docker:infra:cleanup": "docker compose down --volumes --remove-orphans",
+    "docker:db:generate": "prisma generate",
+    "docker:db:migrate:dev": "prisma migrate dev",
+    "docker:db:migrate:prod": "prisma migrate deploy",
+    "postinstall": "prisma generate"
+  },
+  "dependencies": {
+    "@fastify/cookie": "^11.1.1",
+    "@fastify/cors": "^11.3.0",
+    "@fastify/rate-limit": "^11.1.0",
+    "@prisma/client": "^6.19.0",
+    "fastify": "^5.6.0",
+    "jsonwebtoken": "^9.0.2",
+    "nodemailer": "^9.0.3",
+    "resend": "^6.18.0",
+    "zod": "^4.1.0"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^24.0.0",
+    "@types/nodemailer": "^8.0.1",
+    "prisma": "^6.19.0",
+    "tsup": "^8.5.1",
+    "tsx": "^4.23.0",
+    "typescript": "5.9.2"
+  }
+}

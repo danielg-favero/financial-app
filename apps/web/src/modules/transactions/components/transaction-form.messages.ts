@@ -1,0 +1,22 @@
+export const transactionFormMessages = {
+  descriptionLabel: "Descrição",
+  descriptionPlaceholder: "Ex.: Aluguel de julho",
+  amountLabel: "Valor (R$)",
+  amountPlaceholder: "0,00",
+  categoryLabel: "Categoria",
+  categoryPlaceholder: "Selecione a categoria",
+  transactionDateLabel: "Data da transação",
+  referenceMonthLabel: "Mês de referência",
+  referenceMonthPlaceholder: "Selecione o mês",
+  referenceYearLabel: "Ano de referência",
+  addRow: "Adicionar transação",
+  removeRow: "Remover transação",
+  rowLabel: (index: number) => `Transação ${index}`,
+  validation: {
+    amount: "Informe um valor numérico válido.",
+    category: "Selecione a categoria.",
+    transactionDate: "Informe a data da transação.",
+    referenceMonth: "Selecione o mês de referência.",
+    referenceYear: "Informe um ano entre 1900 e 2200.",
+  },
+};

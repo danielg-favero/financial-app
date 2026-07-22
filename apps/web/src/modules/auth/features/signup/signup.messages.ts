@@ -1,0 +1,21 @@
+export const signUpMessages = {
+  title: "Criar conta",
+  description: "Comece a controlar seu orçamento anual",
+  firstNameLabel: "Nome",
+  lastNameLabel: "Sobrenome",
+  emailLabel: "E-mail",
+  emailPlaceholder: "voce@exemplo.com",
+  passwordLabel: "Senha",
+  confirmPasswordLabel: "Confirmar senha",
+  submit: "Criar conta",
+  submitting: "Criando conta...",
+  signInPrompt: "Já tem uma conta?",
+  signInLink: "Entrar",
+  success: "Conta criada! Enviamos um link de confirmação para o seu e-mail.",
+  validation: {
+    firstName: "Informe seu nome.",
+    lastName: "Informe seu sobrenome.",
+    email: "Informe um e-mail válido.",
+    confirmPassword: "As senhas não coincidem.",
+  },
+};

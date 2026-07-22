@@ -13,6 +13,33 @@
     "check-types": {
       "dependsOn": ["^check-types"]
     },
+    "test": {
+      "dependsOn": ["^build"]
+    },
+    "docker:infra:up": {
+      "dependsOn": ["^build"],
+      "cache": false
+    },
+    "docker:infra:down": {
+      "dependsOn": ["^build"],
+      "cache": false
+    },
+    "docker:infra:cleanup": {
+      "dependsOn": ["^build"],
+      "cache": false
+    },
+    "docker:db:generate": {
+      "dependsOn": ["^build"],
+      "cache": false
+    },
+    "docker:db:migrate:dev": {
+      "dependsOn": ["^build"],
+      "cache": false
+    },
+    "docker:db:migrate:prod": {
+      "dependsOn": ["^build"],
+      "cache": false
+    },
     "dev": {
       "cache": false,
       "persistent": true

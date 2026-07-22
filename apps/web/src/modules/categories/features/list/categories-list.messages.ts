@@ -1,0 +1,23 @@
+export const categoriesListMessages = {
+  newCategory: "Nova categoria",
+  searchPlaceholder: "Buscar categorias...",
+  searchLabel: "Buscar categorias",
+  parentFilterLabel: "Filtrar por categoria superior",
+  parentFilterAll: "Todas as categorias",
+  deleteSelected: (count: number) => `Excluir selecionadas (${count})`,
+  selectAll: "Selecionar todas",
+  selectRow: (name: string) => `Selecionar categoria ${name}`,
+  columns: {
+    name: "Nome",
+    type: "Tipo",
+    expenseKind: "Classificação",
+    parent: "Categoria superior",
+    createdAt: "Criada em",
+    actions: "Ações",
+  },
+  edit: (name: string) => `Editar categoria ${name}`,
+  remove: (name: string) => `Excluir categoria ${name}`,
+  empty: "Nenhuma categoria encontrada.",
+  error: "Não foi possível carregar as categorias.",
+  none: "—",
+};
