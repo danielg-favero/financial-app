@@ -40,11 +40,19 @@
       "dependsOn": ["^build"],
       "cache": false
     },
-    "start": {
-      "dependsOn": ["build"],
+    "start:backend": {
+      "dependsOn": ["^build"],
       "cache": false
     },
-    "dev": {
+    "dev:backend": {
+      "cache": false,
+      "persistent": true
+    },
+    "start:web": {
+      "dependsOn": ["^build"],
+      "cache": false
+    },
+    "dev:web": {
       "cache": false,
       "persistent": true
     }
