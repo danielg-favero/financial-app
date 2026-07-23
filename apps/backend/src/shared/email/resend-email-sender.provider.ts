@@ -20,11 +20,19 @@ export class ResendEmailSender implements IEmailSender {
   }
 
   async send(email: ISendEmailDTO): Promise<void> {
-    await this.client.emails.send({
+    const { data, error } = await this.client.emails.send({
       from: this.from,
       to: email.to,
       subject: email.subject,
       html: email.html,
     });
+
+    if (error) {
+      console.error("Error sending email:", JSON.stringify(error));
+    }
+
+    if (data) {
+      console.log("Successfully sent email");
+    }
   }
 }
